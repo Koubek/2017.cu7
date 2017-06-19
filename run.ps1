@@ -1,3 +1,7 @@
 $version = (Split-Path $PSScriptRoot -Leaf).Replace('.',':')
 $sharePath = Join-Path $PSScriptRoot 'Share'
-start-process 'docker.exe' -argumentList "run -v ${sharePath}:c:\share navdocker.azurecr.io/nav/$version"
+$shareParameter = ""
+if (Test-Path $sharePath) {
+    $shareParameter = " -v ${sharePath}:c:\share"
+}
+start-process 'docker.exe' -argumentList "run$shareParameter navdocker.azurecr.io/nav/$version"
