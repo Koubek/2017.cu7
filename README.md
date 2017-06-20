@@ -1,3 +1,3 @@
-# 2017.cu7
+# Specific
 
-Add a NAVDVD folder to the repository and build the image
+Add the content of a NAV DVD to the NAVDVD folder and build the image
