@@ -1,7 +1,8 @@
-$version = (Split-Path $PSScriptRoot -Leaf).Replace('.',':')
-$sharePath = Join-Path $PSScriptRoot 'Share'
+$imageVersionTag = . .\scripts\Get-ImageVersionTag.ps1 (Join-Path $PSScriptRoot NAVDVD)
+
 $shareParameter = ""
 if (Test-Path $sharePath) {
     $shareParameter = " -v ${sharePath}:c:\share"
 }
-start-process 'docker.exe' -argumentList "run$shareParameter navdocker.azurecr.io/nav/$version"
+
+start-process 'docker.exe' -argumentList "run$shareParameter $imageVersionTag"
