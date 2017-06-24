@@ -1,4 +1,4 @@
-FROM navdocker.azurecr.io/nav/generic
+FROM navdocker.azurecr.io/dynamics-nav-generic
 
 LABEL maintainer "Freddy Kristiansen"
 
