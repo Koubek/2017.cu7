@@ -1,4 +1,4 @@
-FROM navdocker.azurecr.io/nav/generic
+FROM navdocker.azurecr.io/dynamics-nav-generic
 
 LABEL maintainer "Freddy Kristiansen"
 
@@ -11,7 +11,7 @@ RUN PowerShell c:\Run\navstart.ps1
 ENV BuildingImage _
 
 ENV DatabaseServer localhost
-ENV DatabaseInstance SQLEXPRESS
+ENV DatabaseInstance Default
 ENV DatabaseName CRONUS
 
 CMD C:\Run\start.ps1
